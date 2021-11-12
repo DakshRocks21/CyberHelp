@@ -1,0 +1,120 @@
+import discord
+from discord.ext import commands
+import canvacord
+
+class Image(commands.Cog):
+    """Image Bio"""
+    def __init__(self, bot):
+        self.bot = bot
+        self.hidden = True
+
+    @commands.command()
+    async def triggered(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.trigger(user)
+        file = discord.File(filename="triggered.gif", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def communism(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.communism(user)
+        file = discord.File(filename="communism.gif", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def jail(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.jail(user)
+        file = discord.File(filename="jail.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def gay(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.gay(user)
+        file = discord.File(filename="gay.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def hitler(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.hitler(user)
+        file = discord.File(filename="hitler.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def aborted(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.aborted(user)
+        file = discord.File(filename="aborted.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def affect(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.affect(user)
+        file = discord.File(filename="affect.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def airpods(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.airpods(user)
+        file = discord.File(filename="airpods.gif", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def america(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.america(user)
+        file = discord.File(filename="america.gif", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def wanted(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.wanted(user)
+        file = discord.File(filename="wanted.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def joke(self, ctx, user : discord.Member = None):
+        if user == None:
+            user = ctx.author
+        image = await canvacord.jokeoverhead(user)
+        file = discord.File(filename="jokeoverhead.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def spank(self, ctx, user1 : discord.Member = None, user2 : discord.Member = None):
+        if user1 == None:
+            user1 = ctx.author
+        if user2 == None:
+            user2 = ctx.author
+        image = await canvacord.spank(user1, user2)
+        file = discord.File(filename="spank.png", fp=image)
+        await ctx.send(file=file)
+
+    @commands.command()
+    async def bed(self, ctx, user1 : discord.Member = None, user2 : discord.Member = None):
+        if user1 == None:
+            user1 = ctx.author
+        if user2 == None:
+            user2 = ctx.author
+        image = await canvacord.bed(user1, user2)
+        file = discord.File(filename="bed.png", fp=image)
+        await ctx.send(file=file)
+
+def setup(bot):
+    bot.add_cog(Image(bot))
